@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import { Spotlight } from "./components/ui/Spotlight";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
           <Navbar />
           <div className="flex-grow flex flex-col items-center pt-16">
             <main className="flex-grow w-full max-w-6xl">    
+              {/* <Spotlight className="absolute inset-0 z-0" /> */}
               <HeroSection />
             </main>
           </div>
