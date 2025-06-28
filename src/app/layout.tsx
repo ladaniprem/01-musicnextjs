@@ -37,6 +37,7 @@ export default function RootLayout({
             <main className="flex-grow w-full max-w-6xl">    
               {/* <Spotlight className="absolute inset-0 z-0" /> */}
               <HeroSection />
+              
             </main>
           </div>
         </div>
