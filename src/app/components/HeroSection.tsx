@@ -1,7 +1,9 @@
 'use client';
 import FeaturedCorses from "./FeaturedCorses";
+import Infinitycard from "./Infinitycard";
 import { ContainerTextFlip } from "./ui/container-text-flip";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
+
 import { Spotlight } from "./ui/Spotlight";
 import WhyChooseUs from "./WhyChooseUs";
 
@@ -37,7 +39,11 @@ export default function HeroSection() {
           <br/>
           <br/>
       <WhyChooseUs/>
+      <br/>
+      <br/>
+      <br/>
         </div>
+     <Infinitycard />
       </div>
     </div>
   )
