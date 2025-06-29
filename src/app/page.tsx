@@ -1,6 +1,7 @@
 import FeaturedCourses from "./components/FeaturedCorses";
 import HeroSection from "./components/HeroSection";
 import Infinitycard from "./components/Infinitycard";
+import UpcomingWebinar from "./components/UpcomingWebinar";
 import WhyChooseUs from "./components/WhyChooseUs";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <FeaturedCourses />
       <WhyChooseUs />
       <Infinitycard />
+      <UpcomingWebinar />
     </main>
   )
 }
