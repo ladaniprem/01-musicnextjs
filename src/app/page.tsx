@@ -4,7 +4,6 @@ import Infinitycard from "./components/Infinitycard";
 import Instructor from "./components/Instructor";
 import UpcomingWebinar from "./components/UpcomingWebinar";
 import WhyChooseUs from "./components/WhyChooseUs";
-import ContactPage from "./contact/page";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
@@ -18,7 +17,7 @@ export default function Home() {
       <Infinitycard />
       <UpcomingWebinar />
        <Instructor />
-       <ContactPage />
+      
     </main>
   )
 }
