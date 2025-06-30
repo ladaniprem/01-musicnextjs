@@ -1,5 +1,6 @@
 'use client';
 import FeaturedCorses from "./FeaturedCorses";
+import Footer from "./Footer";
 import Infinitycard from "./Infinitycard";
 import Instructor from "./Instructor";
 import { ContainerTextFlip } from "./ui/container-text-flip";
@@ -55,6 +56,8 @@ export default function HeroSection() {
           <br/>
           <br/>
           <Instructor />
+          <br/>
+          <Footer />
         </div>
       </div>
     </div>
