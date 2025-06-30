@@ -30,11 +30,11 @@ export const WavyBackground = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const animationIdRef = useRef<number | null>(null);
-  const wRef = useRef<number>(window.innerWidth);
-  const hRef = useRef<number>(window.innerHeight);
+  const wRef = useRef<number>(typeof window !== "undefined" ? window.innerWidth : 0);
+  const hRef = useRef<number>(typeof window !== "undefined" ? window.innerHeight : 0);
   const ntRef = useRef<number>(0);
 
-  const getSpeed = () => {
+  const getSpeed = React.useCallback(() => {
     switch (speed) {
       case "slow":
         return 0.001;
@@ -43,15 +43,19 @@ export const WavyBackground = ({
       default:
         return 0.001;
     }
-  };
+  }, [speed]);
 
-  const waveColors = colors ?? [
-    "#38bdf8",
-    "#818cf8",
-    "#c084fc",
-    "#e879f9",
-    "#22d3ee",
-  ];
+  const waveColors = React.useMemo(
+    () =>
+      colors ?? [
+        "#38bdf8",
+        "#818cf8",
+        "#c084fc",
+        "#e879f9",
+        "#22d3ee",
+      ],
+    [colors]
+  );
 
   const drawWave = React.useCallback(
     (n: number) => {
@@ -72,7 +76,10 @@ export const WavyBackground = ({
     },
     [waveWidth, waveColors, noise, getSpeed, wRef, hRef, ntRef]
   );
+
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
